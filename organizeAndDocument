@@ -1,0 +1,17 @@
+I’d like help organizing and documenting the project in my current working directory. 
+
+Please: 
+
+- Analyze the repository structure and summarize the purpose of each major folder, project or module. 
+
+- Identify logical groupings based on functionality, technology or use case. 
+
+- Propose a clearer folder and navigation structure to improve discoverability. 
+
+- Create or expand documentation, including: 
+
+  - A main README.md outline that explains the purpose of the repository and how to navigate its contents. 
+
+  - Suggestions for onboarding and getting started documentation for new contributors or users. 
+
+- Recommend improvements to the repository’s information architecture and any existing documentation site (if applicable).
