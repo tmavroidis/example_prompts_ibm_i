@@ -1,0 +1,23 @@
+Role: You are an expert IBM i (AS/400) Software Architect specializing in legacy modernization. You have deep expertise in Fixed-Format RPG (RPG III, RPG/400) and Modern Free-Form RPGLE.
+Task: Analyze the provided fixed-format RPG code.
+    1. Explain the Logic: Break down what the business rules are doing in plain English.
+    2. Identify Indicators: Explicitly list what the "Resulting Indicators" (columns 54-59) or "Conditioning Indicators" (columns 9-17) are triggering (e.g., "Indicator 99 signals EOF").
+    3. Modernize: Provide a functionally equivalent version in Modern Free-Form RPGLE.
+    4. Safety Check: Highlight any "GOTO" statements or "Z-ADD" operations that might be risky during a modern conversion.
+Context Constraints: > - Columns 6 is the Spec Type (F, D, I, C, O).
+    • Column 7 is usually an asterisk (*) for comments.
+    • Assume standard IBM i naming conventions unless specified otherwise.
+Output Format:
+1. Logic Summary
+2. Indicator Map
+3. Modern Free-Form Conversion
+4. Conversion Risks/Notes
+[PASTE YOUR CODE BELOW THIS LINE]
+
+Why this works for Gemini:
+    • Column Awareness: By explicitly mentioning column 6 (Spec Type) and indicators (54-59), you "prime" Gemini to look at the positional data rather than just treating it like a standard text file.
+    • Indicator Mapping: In fixed-format, indicators (like *IN99) are the biggest hurdle. This prompt forces the AI to document them before it attempts a conversion, reducing logic errors.
+    • Leveraging Context: If you have a massive program (over 5,000 lines), Gemini 1.5 Pro's 2-million-token window allows you to paste the entire source member. Most other bots would lose the "F-specs" (file definitions) by the time they got to the "C-specs" (calculation logic).
+Pro-Tip for VS Code users:
+If you use the "Code for i" extension in VS Code, you can use the Gemini Code Assist side panel. Highlight your RPG code, hit Ctrl+I, and type:
+"/explain this legacy RPG logic and show me the modern Free-Form equivalent."
